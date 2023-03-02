@@ -89,6 +89,11 @@ workflows:
             xcode: latest
             cocoapods: default
         scripts:
-            - xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+             - name: Install CocoaPods dependencies
+               script: | 
+                    pod install
+             - name: Install CocoaPods dependencies
+               script: | 
+                     xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
