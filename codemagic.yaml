@@ -15,6 +15,6 @@ workflows:
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
         publishing:
-      email:
-        recipients:
-          - ibrarjee.343@gmail.com 
+          email:
+            recipients:
+              - ibrarjee.343@gmail.com 
