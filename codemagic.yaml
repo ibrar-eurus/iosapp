@@ -5,6 +5,7 @@ workflows:
         environment:
             xcode: latest
             cocoapods: default
+            SONAR_TOKEN: 798adff563c5a05aa04c32cb3453b77355cbb009
         scripts:
              - name: Install CocoaPods dependencies
                script: | 
@@ -13,10 +14,12 @@ workflows:
                script: | 
                      wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-macosx.zip
                      unzip sonar-scanner-cli-4.7.0.2747-macosx.zip
-                     sonar-scanner \
+                     sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
-                      -Dsonar.sources= ./sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
+                      -Dsonar.login=$SONAR_TOKEN \
+                      -Dsonar.sources=lib \
+                      -Dsonar.exclusions=**/*.g.dart \
                       -Dsonar.host.url=https://sonarcloud.io
              - name: build your app without sigining 
                script: | 
