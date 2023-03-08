@@ -16,7 +16,7 @@ workflows:
                      sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
-                      -Dsonar.sources= ./sonar-scanner-4.7.0.2747-macosx/bin/ \
+                      -Dsonar.sources= ./sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
                       -Dsonar.host.url=https://sonarcloud.io
              - name: build your app without sigining 
                script: | 
