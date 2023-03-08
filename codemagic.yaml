@@ -13,7 +13,9 @@ workflows:
                script: | 
                      wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-macosx.zip
                      unzip sonar-scanner-cli-4.7.0.2747-macosx.zip
-                     
+                     cd sonar-scanner-4.7.0.2747-macosx
+                     ls
+                     pwd
                      sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
