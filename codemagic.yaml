@@ -17,10 +17,10 @@ workflows:
                      sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
-                      -Dsonar.sources=./ \
-                      -Dsonar.exclusions=**/*.g.dart \
+                      -Dsonar.sources=. \
                       -Dsonar.host.url=https://sonarcloud.io \
-                      -Dsonar.login=$SONAR_TOKEN
+                      -Dsonar.login=$SONAR_TOKEN \
+                      
              - name: build your app without sigining 
                script: | 
                      xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
