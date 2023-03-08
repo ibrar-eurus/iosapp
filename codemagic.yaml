@@ -9,6 +9,16 @@ workflows:
              - name: Install CocoaPods dependencies
                script: | 
                     pod install
+             - name: sonarqube
+               script: | 
+                     wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-macosx.zip
+                     unzip sonar-scanner-cli-4.7.0.2747-macosx.zip
+                     
+                     sonar-scanner \
+                      -Dsonar.organization=eurus \
+                      -Dsonar.projectKey=sample_ios \
+                      -Dsonar.sources= sonar-scanner-cli-4.7.0.2747-macosx/sonar-scanner-4.7.0.2747-macosx/bin \
+                      -Dsonar.host.url=https://sonarcloud.io
              - name: build your app without sigining 
                script: | 
                      xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
