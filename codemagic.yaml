@@ -17,7 +17,6 @@ workflows:
                      sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
-                      -Dsonar.login=$SONAR_TOKEN \
                       -Dsonar.sources=lib \
                       -Dsonar.exclusions=**/*.g.dart \
                       -Dsonar.host.url=https://sonarcloud.io
