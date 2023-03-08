@@ -23,7 +23,3 @@ workflows:
                      xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-        publishing:
-          email:
-            recipients:
-              - ibrarjee.343@gmail.com 
