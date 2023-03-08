@@ -13,12 +13,14 @@ workflows:
                script: | 
                      wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-macosx.zip
                      unzip sonar-scanner-cli-4.7.0.2747-macosx.zip
+                     SONAR_TOKEN="798adff563c5a05aa04c32cb3453b77355cbb009"
                      sonar-scanner-4.7.0.2747-macosx/bin/sonar-scanner \
                       -Dsonar.organization=eurus \
                       -Dsonar.projectKey=sample_ios \
                       -Dsonar.sources=./ \
                       -Dsonar.exclusions=**/*.g.dart \
-                      -Dsonar.host.url=https://sonarcloud.io
+                      -Dsonar.host.url=https://sonarcloud.io \
+                      -Dsonar.login=$SONAR_TOKEN
              - name: build your app without sigining 
                script: | 
                      xcodebuild build -workspace "swiftly.xcworkspace" -scheme "swiftly" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
