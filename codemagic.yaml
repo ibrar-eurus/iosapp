@@ -13,6 +13,8 @@ workflows:
                script: | 
                      wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-macosx.zip
                      unzip sonar-scanner-cli-4.7.0.2747-macosx.zip
+                     ls
+                     pwd
                      
                      sonar-scanner \
                       -Dsonar.organization=eurus \
