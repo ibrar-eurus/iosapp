@@ -5,7 +5,7 @@ workflows:
         environment:
             xcode: latest
             cocoapods: default
-            SONAR_TOKEN: 798adff563c5a05aa04c32cb3453b77355cbb009
+            SONAR_TOKEN: "798adff563c5a05aa04c32cb3453b77355cbb009"
         scripts:
              - name: Install CocoaPods dependencies
                script: | 
